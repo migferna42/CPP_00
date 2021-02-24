@@ -3,9 +3,9 @@
 
 void	transform(int argc, char **argv)
 {
-	int 					it;
-	std::string 			str;
-	std::string::iterator 	begin;
+	int						it;
+	std::string				str;
+	std::string::iterator	begin;
 	std::string::iterator	end;
 
 	it = 1;
@@ -19,10 +19,8 @@ void	transform(int argc, char **argv)
 			std::cout << (char)toupper(*begin);
 			begin++;
 		}
-		std::cout << " ";
 		it++;
 	}
-	std::cout << std::endl; 
 }
 
 int main(int argc, char **argv)
@@ -31,8 +29,9 @@ int main(int argc, char **argv)
 
 	str = "* LOUD AND UNBEARABLE FEEDBACK NOISE *"; 
 	if (argc < 2)
-		std::cout << str << std::endl;
+		std::cout << str;
 	else
 		transform(argc, argv);
+	std::cout << std::endl; 
 	return (0);
 }
