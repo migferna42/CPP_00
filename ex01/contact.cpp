@@ -23,12 +23,13 @@ void	Contact::fillData()
 	size_t 		it;
 	std::string	value;
 
-	it = -1;
-	while (++it < 11)
+	it = 0;
+	while (it < 11)
 	{
 		std::cout << "Please enter your " << this->fields_names[it] << std::endl;
-		std::cin >> value;
+		getline(std::cin >> std::ws, value);
 		this->fields_value[it] = value;
+		it++;
 	}
 }
 

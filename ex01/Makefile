@@ -1,6 +1,6 @@
 NAME = Phonebook
 
-CC = clang++
+CXX = clang++
 CPPFLAGS = -Werror -Wall -Wextra
 RM = rm -rf
 
@@ -10,7 +10,7 @@ OBJS = $(SRCS_FILES:.cpp=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:		
 			$(RM) $(OBJS)

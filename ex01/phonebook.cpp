@@ -29,8 +29,8 @@ void	Phonebook::addSize(void)
 
 void	Phonebook::addIndex(size_t _index)
 {
-	if (index >= 8)
-		index = 7;
+	if (_index > 7)
+		_index = 7;
 	this->index = _index;
 }
 
@@ -55,10 +55,23 @@ void Phonebook::truncateInput(std::string str)
 void Phonebook::selectContact()
 {
 	size_t index;
+	std::string str;
 
 	std::cout << "Select index: " << std::endl;
-	std::cin >> index;
-	this->contacts[index].showContact();
+	std::cin >> str;
+	try 
+	{
+		index = std::stoi(str, nullptr);
+	}
+	catch (const std::invalid_argument &e)
+	{
+		std::cerr << "Invalid argument: " << e.what() << std::endl;
+		return ;
+	}
+	if (index < 0 || index > this->size - 1)
+		std::cout << "Invalid index" << std::endl;
+	else
+		this->contacts[index].showContact();
 }
 
 void Phonebook::showList(void)
