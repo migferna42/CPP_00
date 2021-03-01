@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 			phonebook.addContact();
 		else if (!command.compare("SEARCH"))
 			phonebook.searchContact();
-		else
+		else if (command.compare("EXIT"))
 			std::cout << "Command not found, retry" << std::endl;
 	}
 	return (0);
